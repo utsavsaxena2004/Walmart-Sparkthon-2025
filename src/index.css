@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CSS Variables for theming */
+:root {
+  --primary-text: #111827;
+  --secondary-text: #6b7280;
+  --background: #ffffff;
+  --card-background: #ffffff;
+  --border-color: #e5e7eb;
+  --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+}
+
+/* Dim mode variables */
+.dim-mode {
+  --primary-text: #f9fafb;
+  --secondary-text: #d1d5db;
+  --background: #1f2937;
+  --card-background: #374151;
+  --border-color: #4b5563;
+  --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.3), 0 1px 2px -1px rgb(0 0 0 / 0.3);
+}
+
+/* Apply variables to common classes */
+.bg-white {
+  background-color: var(--card-background) !important;
+}
+
+.bg-gray-50 {
+  background-color: var(--background) !important;
+}
+
+.text-gray-900 {
+  color: var(--primary-text) !important;
+}
+
+.text-gray-600 {
+  color: var(--secondary-text) !important;
+}
+
+.border-gray-200 {
+  border-color: var(--border-color) !important;
+}
+
+.shadow-md {
+  box-shadow: var(--shadow) !important;
+}
+
+/* Calm mode specific styles */
+@layer base {
+  .calm-mode {
+    --calm-primary: #10b981;
+    --calm-secondary: #059669;
+    --calm-accent: #34d399;
+  }
+  
+  .calm-mode .bg-blue-600 {
+    background-color: var(--calm-primary) !important;
+  }
+  
+  .calm-mode .hover\:bg-blue-700:hover {
+    background-color: var(--calm-secondary) !important;
+  }
+  
+  .calm-mode .text-blue-600 {
+    color: var(--calm-primary) !important;
+  }
+  
+  .calm-mode .border-blue-500 {
+    border-color: var(--calm-primary) !important;
+  }
+  
+  .calm-mode .focus\:ring-blue-500:focus {
+    --tw-ring-color: var(--calm-primary) !important;
+  }
+}
+
+/* Smooth transitions for all interactive elements */
+@layer components {
+  .transition-all {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+  }
+}
+
+/* Animation for breathing exercise */
+@keyframes breathe {
+  0%, 100% { transform: scale(0.5); }
+  50% { transform: scale(1); }
+}
+
+.breathe-animation {
+  animation: breathe 4s ease-in-out infinite;
+}
+
+/* Pulse animation for active states */
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.pulse-soft {
+  animation: pulse-soft 2s ease-in-out infinite;
+}
+
+/* Gradient animations for enhanced visuals */
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.gradient-animate {
+  background: linear-gradient(-45deg, #3b82f6, #10b981, #8b5cf6, #f59e0b);
+  background-size: 400% 400%;
+  animation: gradient-shift 15s ease infinite;
+}
+
+/* Enhanced focus states for accessibility */
+.focus-enhanced:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+}
+
+/* Loading shimmer effect */
+@keyframes shimmer {
+  0% { background-position: -200px 0; }
+  100% { background-position: calc(200px + 100%) 0; }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200px 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+.dim-mode .shimmer {
+  background: linear-gradient(90deg, #374151 25%, #4b5563 50%, #374151 75%);
+  background-size: 200px 100%;
+}
