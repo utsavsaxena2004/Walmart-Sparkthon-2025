@@ -202,3 +202,8 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ---
 
 **NeuroCart: Making shopping accessible, comfortable, and empowering for everyone.**
+## Installation
+Clone the repository:
+``sh
+git clone https://github.com/utsavsaxena2004/Walmart-Sparkthon-2025.git
+``
